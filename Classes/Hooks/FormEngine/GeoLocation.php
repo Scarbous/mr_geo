@@ -23,7 +23,7 @@ class GeoLocation extends AbstractNode
         $row = $this->data['databaseRow'];
         $name = $this->data['parameterArray']['itemFormElName'];
         $fieldName = $this->data['fieldName'];
-        $geo = GeoUtility::parseGeo($row[$fieldName]);
+        $geo = GeoUtility::geoDecode($row[$fieldName]);
         $id = StringUtility::getUniqueId('mr-geo-');
 
         ob_start();
